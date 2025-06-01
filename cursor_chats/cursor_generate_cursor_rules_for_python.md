@@ -1,5 +1,5 @@
 # Generate cursor rules for Python development
-_Exported on 5/31/2025 at 22:54:02 PDT from Cursor (0.50.5)_
+_Exported on 6/1/2025 at 15:54:13 PDT from Cursor (0.50.5)_
 
 ---
 
@@ -816,4 +816,207 @@ for chunk in response:
         print(chunk.choices[0].delta.content, end='', flush=True)
 print("\n" + "-" * 50)
 ```
+
+---
+
+**User**
+
+@Recent Changes 
+
+---
+
+**Cursor**
+
+Looking at the recent changes, I can see that we've successfully added the system and user prompt definitions in cell 7, which fixed the NameError in cell 8. The code is now properly structured with:
+
+1. Question definition (cell 6)
+2. System and user prompt definitions (cell 7)
+3. GPT response with streaming (cell 8)
+4. Ollama response (cell 9)
+
+The code should now work correctly. When you run the cells in order, you should see:
+1. The question being processed
+2. A streaming response from GPT-4
+3. A response from Llama 3.2 (if Ollama is running locally)
+
+The error you were seeing before (`NameError: name 'system_prompt' is not defined`) has been fixed by adding the prompt definitions in cell 7. You can now run the cells in sequence and they should work as expected.
+
+Would you like to try running the cells now, or would you like to make any other modifications to the code?
+
+---
+
+**User**
+
+Please create a typical .cursorignore file for Python projects using Jupyter Notebook, and put it to proper place.
+
+---
+
+**Cursor**
+
+I'll help you create a `.cursorignore` file with common patterns for Python and Jupyter Notebook projects. This file should be placed in the `.cursor` directory.
+
+
+```ignore
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.python-version
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Logs
+*.log
+logs/
+log/
+
+# Local development settings
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Data files
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.zip
+*.tar
+*.rar
+*.7z
+*.db
+*.sqlite
+*.sqlite3
+
+# Model files
+*.h5
+*.pkl
+*.model
+*.joblib
+*.bin
+*.pt
+*.pth
+
+# Documentation
+docs/_build/
+site/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+```
+
+I've created a comprehensive `.cursorignore` file in the `.cursor` directory. This file tells Cursor which files and directories to ignore when indexing and searching. The file includes patterns for:
+
+1. Python-specific files:
+   - Byte-compiled files (`__pycache__/`, `*.pyc`, etc.)
+   - Virtual environments
+   - Build and distribution files
+   - Package files
+
+2. Jupyter Notebook specific:
+   - `.ipynb_checkpoints` directories
+   - IPython configuration files
+
+3. IDE and editor files:
+   - VS Code settings (`.vscode/`)
+   - PyCharm settings (`.idea/`)
+   - Vim swap files
+   - macOS system files
+
+4. Testing and coverage:
+   - Test cache directories
+   - Coverage reports
+   - Hypothesis test data
+
+5. Data and model files:
+   - Common data formats (CSV, SQLite, etc.)
+   - Compressed files
+   - Machine learning model files
+
+6. Documentation and temporary files:
+   - Built documentation
+   - Temporary files and backups
+
+This configuration will help Cursor:
+1. Ignore unnecessary files during indexing
+2. Improve search performance
+3. Focus on relevant source code
+4. Avoid indexing large data files or model files
+
+Would you like me to make any adjustments to the ignore patterns?
 
