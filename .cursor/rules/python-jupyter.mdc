@@ -1,0 +1,91 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Python and Jupyter Notebook Development Guidelines
+
+## Project Structure
+- Keep notebooks in a dedicated `notebooks/` directory
+- Store reusable Python modules in a `src/` directory
+- Maintain a `requirements.txt` or `pyproject.toml` for dependencies
+- Use `.env` files for environment variables (add to .gitignore)
+
+## Jupyter Notebook Best Practices
+1. **Notebook Organization**
+   - Start with a clear title and description
+   - Use markdown cells for documentation
+   - Group related cells with markdown headers
+   - Keep notebooks focused on a single topic
+
+2. **Code Quality**
+   - Use code formatting tools (black, isort)
+   - Follow PEP 8 style guide
+   - Add type hints where possible
+   - Document functions and classes with docstrings
+
+3. **Performance**
+   - Use `%%time` magic for performance measurement
+   - Profile code with `%prun` or `%lprun`
+   - Clear output cells before committing
+   - Use `%matplotlib inline` for plots
+
+4. **Data Management**
+   - Store data in a `data/` directory
+   - Use relative paths for data loading
+   - Document data sources and preprocessing steps
+   - Save intermediate results when appropriate
+
+## Development Workflow
+1. **Environment Setup**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Unix/macOS
+   pip install -r requirements.txt
+   ```
+
+2. **Notebook Development**
+   - Use Jupyter Lab for better development experience
+   - Enable auto-save
+   - Use version control (git) for notebooks
+   - Consider using `nbstripout` for cleaning notebook outputs
+
+3. **Testing**
+   - Write unit tests for reusable functions
+   - Use `pytest` for testing
+   - Consider using `nbval` for notebook testing
+
+## Common Tools and Extensions
+- `jupyter_contrib_nbextensions` for additional features
+- `ipywidgets` for interactive widgets
+- `jupyterlab-git` for version control
+- `jupyterlab-lsp` for code intelligence
+
+## Best Practices for Collaboration
+1. **Version Control**
+   - Clear output cells before committing
+   - Use meaningful commit messages
+   - Consider using `nbstripout` git hook
+
+2. **Documentation**
+   - Document assumptions and dependencies
+   - Include setup instructions
+   - Add comments for complex operations
+   - Use markdown cells for explanations
+
+3. **Code Review**
+   - Review notebook structure and flow
+   - Check for proper documentation
+   - Verify code quality and style
+   - Ensure reproducibility
+
+## Troubleshooting
+- Use `%debug` magic for debugging
+- Check kernel status with `%whos`
+- Clear all outputs with `Edit > Clear All Outputs`
+- Restart kernel if memory issues occur
+
+## Additional Resources
+- [Jupyter Documentation](mdc:https:/jupyter.org/documentation)
+- [Python Style Guide (PEP 8)](mdc:https:/peps.python.org/pep-0008)
+- [Jupyter Notebook Best Practices](mdc:https:/www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts)
